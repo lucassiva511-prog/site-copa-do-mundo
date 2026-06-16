@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copa do Mundo FIFA - Portal Completo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    background: #0b0b0b;
+    color: #f5f5f5;
+  }
+
+  header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(90deg, #006847, #ffffff, #ce1126);
+    color: #111;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+
+  header p {
+    opacity: 0.8;
+    margin-top: 8px;
+  }
+
+  /* ABAS */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: #111;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .tab-btn {
+    background: #1c1c1c;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: 500;
+  }
+
+  .tab-btn:hover {
+    background: #00b4ff;
+    color: #000;
+  }
+
+  .tab-btn.active {
+    background: #00b4ff;
+    color: #000;
+  }
+
+  .tab-content {
+    display: none;
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    border-left: 4px solid #00b4ff;
+    padding-left: 10px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    background: #1a1a1a;
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    background: #222;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+  }
+
+  th {
+    background: #1a1a1a;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    background: #111;
+    opacity: 0.7;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>COPA DO MUNDO FIFA</h1>
+  <p>Portal completo com história, dados e estatísticas</p>
+</header>
+
+<!-- ABAS -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="openTab('historia')">História</button>
+  <button class="tab-btn" onclick="openTab('campeoes')">Campeões</button>
+  <button class="tab-btn" onclick="openTab('artilheiros')">Artilheiros</button>
+  <button class="tab-btn" onclick="openTab('recordes')">Recordes</button>
+  <button class="tab-btn" onclick="openTab('sedes')">Sedes</button>
+  <button class="tab-btn" onclick="openTab('curiosidades')">Curiosidades</button>
+</div>
+
+<!-- HISTÓRIA -->
+<div id="historia" class="tab-content active">
+  <h2>História da Copa do Mundo</h2>
+  <p>
+    A Copa do Mundo FIFA foi criada em 1930 no Uruguai. É o maior torneio de futebol do planeta,
+    reunindo seleções de todos os continentes. Ao longo das décadas, o torneio evoluiu em formato,
+    tecnologia e alcance global.
+  </p>
+</div>
+
+<!-- CAMPEÕES -->
+<div id="campeoes" class="tab-content">
+  <h2>Campeões da Copa do Mundo</h2>
+
+  <div class="grid">
+    <div class="card">Brasil — 5 títulos</div>
+    <div class="card">Alemanha — 4 títulos</div>
+    <div class="card">Itália — 4 títulos</div>
+    <div class="card">Argentina — 3 títulos</div>
+    <div class="card">França — 2 títulos</div>
+    <div class="card">Uruguai — 2 títulos</div>
+    <div class="card">Espanha — 1 título</div>
+    <div class="card">Inglaterra — 1 título</div>
+  </div>
+</div>
+
+<!-- ARTILHEIROS -->
+<div id="artilheiros" class="tab-content">
+  <h2>Maiores Artilheiros</h2>
+
+  <table>
+    <tr><th>Jogador</th><th>País</th><th>Gols</th></tr>
+    <tr><td>Miroslav Klose</td><td>Alemanha</td><td>16</td></tr>
+    <tr><td>Ronaldo</td><td>Brasil</td><td>15</td></tr>
+    <tr><td>Gerd Müller</td><td>Alemanha</td><td>14</td></tr>
+    <tr><td>Just Fontaine</td><td>França</td><td>13</td></tr>
+    <tr><td>Pelé</td><td>Brasil</td><td>12</td></tr>
+  </table>
+</div>
+
+<!-- RECORDES -->
+<div id="recordes" class="tab-content">
+  <h2>Recordes da Copa do Mundo</h2>
+
+  <ul>
+    <li>Mais títulos: Brasil (5)</li>
+    <li>Maior artilheiro de uma edição: Just Fontaine (13 gols)</li>
+    <li>Jogador com mais gols em Copas: Miroslav Klose (16)</li>
+    <li>Seleção com mais finais: Alemanha</li>
+    <li>Maior goleada: Hungria 10 x 1 El Salvador (1982)</li>
+    <li>Maior público em final: mais de 170 mil (1950)</li>
+  </ul>
+</div>
+
+<!-- SEDES -->
+<div id="sedes" class="tab-content">
+  <h2>Sedes Históricas</h2>
+
+  <div class="grid">
+    <div class="card">1930 — Uruguai</div>
+    <div class="card">1950 — Brasil</div>
+    <div class="card">1966 — Inglaterra</div>
+    <div class="card">1970 — México</div>
+    <div class="card">1994 — Estados Unidos</div>
+    <div class="card">2002 — Coreia/Japão</div>
+    <div class="card">2018 — Rússia</div>
+    <div class="card">2022 — Catar</div>
+    <div class="card">2026 — México/EUA/Canadá</div>
+  </div>
+</div>
+
+<!-- CURIOSIDADES -->
+<div id="curiosidades" class="tab-content">
+  <h2>Curiosidades</h2>
+
+  <ul>
+    <li>O Brasil participou de todas as edições da Copa.</li>
+    <li>A Itália ficou fora de várias Copas recentes apesar dos títulos históricos.</li>
+    <li>A Copa de 2026 terá 48 seleções.</li>
+    <li>A Espanha venceu sua única Copa em 2010.</li>
+    <li>Pelé venceu 3 Copas como jogador.</li>
+  </ul>
+</div>
+
+<footer>
+  Copa do Mundo FIFA — Portal informativo completo
+</footer>
+
+<script>
+function openTab(tabName) {
+  const tabs = document.querySelectorAll(".tab-content");
+  const buttons = document.querySelectorAll(".tab-btn");
+
+  tabs.forEach(tab => tab.classList.remove("active"));
+  buttons.forEach(btn => btn.classList.remove("active"));
+
+  document.getElementById(tabName).classList.add("active");
+  event.target.classList.add("active");
+}
+</script>
+
+</body>
+</html>
